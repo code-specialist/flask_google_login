@@ -1,2 +1,4 @@
-# flask_google_login
-Simple example Flask app with Google login
+# Simple sample Flask App with Google Login
+
+For documentation check out:
+https://youtube.com/ LINK
