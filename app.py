@@ -65,6 +65,14 @@ def callback():
 
 @app.route("/logout")
 def logout():
+    
+    # Revoke access token to invalidate session
+    if "google_id" in session:
+        credentials = flow.credentials
+        requests.post('https://accounts.google.com/o/oauth2/revoke',
+                      params={'token': credentials.token},
+                      headers={'content-type': 'application/x-www-form-urlencoded'})
+
     session.clear()
     return redirect("/")
 
